@@ -52,10 +52,12 @@
 
                 
             </div>
-            <div class="row row-cols-1 row-cols-md-12 mb-12 text-center pt-5">
 
+            <!-- lista de productos -->
+            <div class="row row-cols-1 row-cols-md-12 mb-12 text-center pt-5">
+                
                 <span class="fs-4 text-left ">Lista de productos</span>
-        
+                
                 <div class="table-responsive pt-4">
                     <table class="table align-middle">
                         <thead>
@@ -66,10 +68,55 @@
                             </tr>
                         </thead>
                         <tbody id="cuerpoTabla">
-                
+                            
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- centro de mesnajes -->
+
+            <div class="row row-cols-1 row-cols-md-12 mb-12">
+                <div class="col">
+                    <div class="card mb-12 rounded-3 shadow-sm">
+                        <div class="card-header py-3  text-center">
+                            <h4 class="my-0 fw-normal">Centro de mensajes</h4>
+                        </div>
+                        <div class="card-body ">
+                            <form class="row g-3 pt-5 " id="loginForm">
+                                <div class="col-md-6">
+    
+                                    <div class="alert alert-warning  text-center" id="miAlert">
+                                        Para enviar mensajes introduce un correo electronico.
+                                    </div>
+                                    <label for="title" class="form-label">Correo electronico</label>
+                                    <input type="text" class="form-control" id="correo" name="correo" required>
+                                    <button type="submit" class="btn btn-lg btn-outline-primary mt-3" id="btEntrar">entrar</button>
+                                </div>
+
+                            </form>
+                            
+                            <hr>
+                            <form class="row g-3 pt-5" id="mensajeForm" style="display: none;" >
+                                <div class="col-md-6">
+                                    <label for="title" class="form-label">Mensaje</label>
+                                    <input type="text" class="form-control" id="mensaje" name="mensaje" value="Hola a todos!!" required onkeypress="return permite(event, 'num_car')">
+                                    <button type="button" class="btn btn-outline-primary mt-3" id="enviaMensaje">Enviar¡</button>
+                                </div>
+                            </form>
+
+                            <div id="listaMensajes">
+                               
+                            </div>
+
+                            
+            
+                        </div>
+            
+                    </div>
+                </div>
+            
+            
             </div>
     
             

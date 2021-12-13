@@ -16,6 +16,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs');
 
 const listaProductos = new Productos()
+const listaMensajes = [];
 
 //index vista de formulario
 app.get('/', function (req, res) {
@@ -35,12 +36,21 @@ httpServer.listen(3000, function(){
 io.on('connection', (socket) => {
     //emite lista de productos
     socket.emit('productos', listaProductos.productos)
+    
+    //emite mensajes
+    socket.emit('mensajes', listaMensajes)
 
     // escucha registro de productos
     socket.on("new-product", data => {
         const ultimoProducto = listaProductos.nuevo(data);
         console.log("data: ",data);
         io.sockets.emit("productos", [data])
+    })
+
+    socket.on("new-mensaje", data => {
+        listaMensajes.push(data);
+        console.log("data mensaje: ",data);
+        io.sockets.emit("mensajes", [data])
     })
 
 })
