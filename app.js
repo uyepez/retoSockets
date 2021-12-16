@@ -12,7 +12,7 @@ app.use(express.static('./public'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.set('views', './views')
+app.set('views', './public/views')
 app.set('view engine', 'ejs');
 
 const listaProductos = new Productos()

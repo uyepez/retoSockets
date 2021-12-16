@@ -1,9 +1,20 @@
 const socket = io();
 let usuario = '';
 
+
+//incluimos lista con fetch
+let contenido = document.querySelector('#listaTodosProductos');
+//fetch api
+fetch('./lista')
+    .then(res => res.text())
+    .then(data => {
+        contenido.innerHTML = data
+    })
+    .catch(err => console.log(err));
+
 // Escuchando el evento 'diego'
 socket.on("productos", data => {
-    console.log("data cliente: ",data);
+    console.log("data cliente: ", data);
 
     data.forEach(producto => {
         console.log(producto.title);
@@ -17,6 +28,8 @@ socket.on("productos", data => {
     });
     //$("#chat").append(data + "<br>")
 })
+
+
 
 
 socket.on("mensajes", dataMessajes =>{

@@ -54,29 +54,12 @@
             </div>
 
             <!-- lista de productos -->
-            <div class="row row-cols-1 row-cols-md-12 mb-12 text-center pt-5">
-                
-                <span class="fs-4 text-left ">Lista de productos</span>
-                
-                <div class="table-responsive pt-4">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Foto</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cuerpoTabla">
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <div id="listaTodosProductos"></div>
+
 
             <!-- centro de mesnajes -->
 
-            <div class="row row-cols-1 row-cols-md-12 mb-12">
+            <div class="row row-cols-1 row-cols-md-12 mb-12 pt-5">
                 <div class="col">
                     <div class="card mb-12 rounded-3 shadow-sm">
                         <div class="card-header py-3  text-center">
@@ -122,14 +105,7 @@
             
         </main>
         
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; Nestor Uriel Yepez ->Reto plantillas / wesockets</small>
-                </div>
-                
-            </div>
-        </footer>
+    <%- include('../partials/footer'); %>
     </div>
 
 
